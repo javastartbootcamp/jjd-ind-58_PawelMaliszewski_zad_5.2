@@ -7,29 +7,38 @@ public class Main {
 
     public static void main(String[] args) {
         RoomInfo roomInfo = new RoomInfo();
-        Room room1 = new Room(15, 25, 20, true);
-        Room room2 = new Room(25, 20.5, 20, true);
+        Room room1 = new Room(15, 22.5, 20, true);
+        Room room2 = new Room(25, 21.5, 20, true);
         Room room3 = new Room(20, 22, 20, false);
 
-        roomInfo.showRoomInfo(room1);
-        room1.lowerRoomTemp();
-        roomInfo.showRoomInfo(room1);
-        room1.setTempLimit(24);
-        roomInfo.showRoomInfo(room1);
-        room1.lowerRoomTemp();
-        roomInfo.showRoomInfo(room1);
+        for (int i = 0; i < 4; i++) {
+            roomInfo.showRoomInfo(room1);
+            if (room1.lowerRoomTemp()) {
+                System.out.println("Temperatura obniżona");
+            } else {
+                System.out.println("Temperatura nie obniżona");
+            }
+        }
 
-        System.out.println("----------------------------------------");
+        System.out.println("--------------------------");
 
-        roomInfo.showRoomInfo(room2);
-        room2.lowerRoomTemp();
-        roomInfo.showRoomInfo(room2);
+        for (int i = 0; i < 2; i++) {
+            roomInfo.showRoomInfo(room2);
+            if (room2.lowerRoomTemp()) {
+                System.out.println("Temperatura obniżona");
+            } else {
+                System.out.println("Temperatura nie obniżona");
+            }
+        }
+        System.out.println("--------------------------");
 
-        System.out.println("----------------------------------------");
-
-        roomInfo.showRoomInfo(room3);
-        room3.lowerRoomTemp();
-        roomInfo.showRoomInfo(room3);
-
+        for (int i = 0; i < 1; i++) {
+            roomInfo.showRoomInfo(room3);
+            if (room3.lowerRoomTemp()) {
+                System.out.println("Temperatura obniżona");
+            } else {
+                System.out.println("Temperatura nie obniżona");
+            }
+        }
     }
 }

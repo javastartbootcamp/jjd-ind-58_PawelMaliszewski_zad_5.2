@@ -1,11 +1,11 @@
 package pl.javastart.task.room;
 
 public class Room {
+    RoomInfo roomInfo;
     private double roomSize;
     private double roomTemp;
     private double tempLimit;
     private boolean airCon;
-    private boolean isTempLowered;
 
     public Room(double roomSize, double roomTemp, double tempLimit, boolean airCon) {
         this.roomSize = roomSize;
@@ -30,25 +30,19 @@ public class Room {
         return airCon;
     }
 
-    boolean isTempLowered() {
-        return isTempLowered;
-    }
-
-    public void lowerRoomTemp() {
+    public boolean lowerRoomTemp() {
         if (airCon && roomTemp >= tempLimit + 1) {
             roomTemp--;
-            isTempLowered = true;
+            return true;
         } else if (airCon && roomTemp > tempLimit && roomTemp < tempLimit + 1) {
             roomTemp = roomTemp - (roomTemp - tempLimit);
-            isTempLowered = true;
-        } else if (airCon == false || roomTemp == tempLimit) {
-            isTempLowered = false;
+            return  true;
         }
+        return false;
     }
 
     public void setTempLimit(double x) {
         tempLimit = x;
-        isTempLowered = false;
     }
 }
 

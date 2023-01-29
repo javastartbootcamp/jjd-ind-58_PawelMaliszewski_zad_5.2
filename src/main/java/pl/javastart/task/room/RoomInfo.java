@@ -6,8 +6,7 @@ public class RoomInfo {
         System.out.println("Wielkość pokoju: " + room.getRoomSize()
                 + ", Aktualna temp w pokoju: " + room.getRoomTemp() + "*C"
                 + ", Temperatura graniczna: " + room.getTempLimit() + "*C"
-                + ", Wyposażony w klimatyzacje: " + room.isAirCon()
-                + ", Temperatura została zmniejszona: " + room.isTempLowered());
+                + ", Wyposażony w klimatyzacje: " + room.isAirCon());
 
     }
 }
