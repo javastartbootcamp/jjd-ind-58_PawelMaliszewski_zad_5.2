@@ -7,9 +7,11 @@ public class Main {
 
     public static void main(String[] args) {
         RoomInfo roomInfo = new RoomInfo();
-        Room room1 = new Room(15, 22.5, 20, true);
+        Room room1 = new Room(15, 23.7, 20, true);
         Room room2 = new Room(25, 21.5, 20, true);
         Room room3 = new Room(20, 22, 20, false);
+
+        room1.setTempLimit(20.5);
 
         for (int i = 0; i < 4; i++) {
             roomInfo.showRoomInfo(room1);
