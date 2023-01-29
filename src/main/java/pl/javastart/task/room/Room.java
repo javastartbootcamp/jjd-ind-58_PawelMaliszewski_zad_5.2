@@ -1,7 +1,6 @@
 package pl.javastart.task.room;
 
 public class Room {
-    RoomInfo roomInfo;
     private double roomSize;
     private double roomTemp;
     private double tempLimit;
@@ -34,8 +33,8 @@ public class Room {
         if (airCon && roomTemp >= tempLimit + 1) {
             roomTemp--;
             return true;
-        } else if (airCon && roomTemp > tempLimit && roomTemp < tempLimit + 1) {
-            roomTemp = roomTemp - (roomTemp - tempLimit);
+        } else if (airCon && roomTemp > tempLimit) {
+            roomTemp = tempLimit;
             return  true;
         }
         return false;
@@ -43,6 +42,13 @@ public class Room {
 
     public void setTempLimit(double x) {
         tempLimit = x;
+    }
+
+    public void showInfo() {
+        System.out.println("Wielkość pokoju: " + roomSize
+                + ", Aktualna temp w pokoju: " + roomTemp + "*C"
+                + ", Temperatura graniczna: " + tempLimit + "*C"
+                + ", Wyposażony w klimatyzacje: " + isAirCon());
     }
 }
 
